@@ -25,7 +25,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         include G5_BBS_PATH.'/newwin.inc.php'; // 팝업레이어
     }
     ?>
-    <div id="tnb">
+<!--     <div id="tnb">
     	<div class="inner">
 			<ul id="hd_qnb">
 	            <li><a href="<?php echo G5_BBS_URL ?>/faq.php">FAQ</a></li>
@@ -34,14 +34,14 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 	            <li><a href="<?php echo G5_BBS_URL ?>/current_connect.php" class="visit">접속자<strong class="visit-num"><?php echo connect('theme/basic'); // 현재 접속자수, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정  ?></strong></a></li>
 	        </ul>
 		</div>
-    </div>
+    </div> -->
     <div id="hd_wrapper">
 
         <div id="logo">
             <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
     
-        <div class="hd_sch_wr">
+<!--         <div class="hd_sch_wr">
             <fieldset id="hd_sch">
                 <legend>사이트 내 전체검색</legend>
                 <form name="fsearchbox" method="get" action="<?php echo G5_BBS_URL ?>/search.php" onsubmit="return fsearchbox_submit(this);">
@@ -83,17 +83,24 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             </fieldset>
                 
             <?php echo popular('theme/basic'); // 인기검색어, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정  ?>
-        </div>
-        <ul class="hd_login">        
+        </div> -->
+        <ul class="hd_login">       
+            
             <?php if ($is_member) {  ?>
+
             <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php">정보수정</a></li>
             <li><a href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a></li>
+            
             <?php if ($is_admin) {  ?>
+            
             <li class="tnb_admin"><a href="<?php echo correct_goto_url(G5_ADMIN_URL); ?>">관리자</a></li>
+            
             <?php }  ?>
             <?php } else {  ?>
+            
             <li><a href="<?php echo G5_BBS_URL ?>/register.php">회원가입</a></li>
             <li><a href="<?php echo G5_BBS_URL ?>/login.php">로그인</a></li>
+            
             <?php }  ?>
 
         </ul>
