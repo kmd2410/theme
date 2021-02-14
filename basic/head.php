@@ -202,7 +202,30 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
 
 <hr>
-
+<?if(!defined("_INDEX_")){?>
+<div class="subVisual">
+    <div id="page_title" class="sbtImg">
+        <div class="title">
+            <h2 class="loc1D"></h2>
+            <div class="text">안녕하세요</div>
+        </div>
+    </div>
+</div>
+<script>
+    //window.onload = function(){};
+    window.onload = function(){
+        let menuDep = $(".loc1D").html();
+        console.log("현재위치:"+menuDep);
+        if(menuDep == "회사소개"){
+            $(".subVisual .text").text("저희 홈페이지를 찾아주셔서 감사합니다.");
+        }else if(menudep == "커뮤니티"){
+            $(".subVisual .text").text("자유롭게 커뮤니티하실 수 있는 장소입니다.");
+        }else{
+            $(".subVisual .text").text("나이스");
+        }
+    }
+</script>
+<?}?>
 <!-- 콘텐츠 시작 { -->
 <div id="wrapper">
     <div id="container_wr">
