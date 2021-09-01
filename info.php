@@ -20,6 +20,12 @@
     3. 파일용도
     _common.php : 그누보드5 루트 common.php 파일을 include 합니다. 일반적으로 php 파일 등의 상단에 include_once('./_common.php'); 와 같이 입력해서 사용합니다.
     
+    common.php    : 그누의 기본구조이며, 모든 작업에 있어서 반드시 include 해야 합니다
+    
+    config.php        : 그누의 기본적인 변수, 테이블, 도메인 등을 정의 합니다
+    
+    dbconfig.php    : 그누의 설치후에 생기는 것으로 mysql db 접속에 필요한 정보가 있습니다. 그누를 재설치 하고자 하는 경우 이 파일을 지우고, install.bak을 install로 바꾸면 됩니다
+    
     group.php : bbs/group.php 파일과 동일합니다. 그룹 최신글을 노출할 때 사용합니다. 테마에 포함되어 있으면 bbs/group.php 대신 사용됩니다.
     
     head.php : 테마의 헤더 부분을 담당하는 파일입니다. 필수 파일입니다.
@@ -39,7 +45,7 @@
     
     theme.config.php : 테마의 기본 설정을 담고 있는 파일입니다. 테마의 지원기기 설정 등의 설정을 할 수 있습니다. 이 파일은 common.php 파일에서 자동 로드됩니다.
     
-    그외 css, img, mobile, skin 등의 폴더 역할은 그누보드5 루트에 있는 해당 폴더의 역할과 동일합니다.
+                        그외 css, img, mobile, skin 등의 폴더 역할은 그누보드5 루트에 있는 해당 폴더의 역할과 동일합니다.
 
     4. 디렉토리
 
@@ -63,4 +69,16 @@
     skin/popular/     : 인기검색어 스킨 디렉토리 (해당 함수를 호출할 때 지정)
     skin/search/      : 검색 스킨 디렉토리 (관리자/기본환경설정에서 지정)
     skin/visit            : 방문자수 스킨 디렉토리 (해당 함수를 호출할 때 지정)
+
+    5. 디자인 파일
+    style.css       : 그누의 기본 css 입니다.
+    head.php       : head.sub.php 및 필요한 lib을 불러오고 상단 및 좌측 디자인이 있습니다
+    head.sub.php : 모든 곳에서 공통으로 불러 쓰며 디자인이 없습니다
+    index.php       : _common.php, _head.php, _tail.php를 불러오고 메인 디자인이 있습니다
+    tail.sub.php    : 모든 곳에서 공통으로 불러쓰며 숨겨진 iframe, 접속접보 insert 등이 있습니다
+    tail.php           : tail.sub.php를 불러오고 우측 및 하단부 디자인이 있습니다
+
+    경로맞는지 확인하기
+    error_reporting(E_ALL);
+    ini_set("display",1);
 ?>
